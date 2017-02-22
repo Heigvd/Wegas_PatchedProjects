@@ -1,0 +1,22 @@
+#!/usr/bin/perl -w
+
+my $files = `find . -name "*.jar" -o -name "*.pom" -o -name "*.zip" -o -name "*.xml"`;
+
+my $md5;
+my $sha1;
+
+foreach (split("\n", $files)){
+  $md5 = `md5sum $_`;
+  $sha1 = `sha1sum $_`;
+
+chomp($md5);
+chomp($sha1);
+
+  $md5 =~ s/ .*//;
+  $sha1 =~ s/ .*//;
+
+   
+  system("echo $md5 > $_.md5");
+  system("echo $sha1 > $_.sha1");
+  
+}
