@@ -2,9 +2,9 @@
 A maven repository containing patched projects used by Wegas.
 
 ## EclipseLink 
-patch org.eclipse.persistence.mappings.DirectCollectionMapping
+patch org.eclipse.persistence.internal.sessions.CollectionChangeRecord
 
 
 
 ## mvn repository
-mvn install:install-file -DgroupId=ch.albasim.payara -DartifactId=payara-embedded-all -Dversion=5.181.pX -Dfile=JAR  -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=repository  -DcreateChecksum=true
+mvn install:install-file -DgroupId=fish.payara.extras -DartifactId=payara-micro -Dversion=5.<XXX>.albasim-p<Y> -Dfile=<your_jar.JAR>  -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=repository  -DcreateChecksum=true
